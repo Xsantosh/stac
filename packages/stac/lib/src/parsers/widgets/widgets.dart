@@ -8,6 +8,7 @@ export 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_
 export 'package:stac/src/parsers/widgets/stac_app_bar/stac_app_bar.dart';
 export 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio.dart';
 export 'package:stac/src/parsers/widgets/stac_auto_complete/stac_auto_complete.dart';
+export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter.dart';
 export 'package:stac/src/parsers/widgets/stac_border/stac_border.dart';
 export 'package:stac/src/parsers/widgets/stac_border_radius/stac_border_radius.dart';
 export 'package:stac/src/parsers/widgets/stac_border_side/stac_border_side.dart';
@@ -34,6 +35,7 @@ export 'package:stac/src/parsers/widgets/stac_decoration_image/stac_decoration_i
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
 export 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller.dart';
 export 'package:stac/src/parsers/widgets/stac_divider/stac_divider.dart';
+export 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu/stac_dropdown_menu.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
 export 'package:stac/src/parsers/widgets/stac_duration/stac_duration.dart';
@@ -96,6 +98,5 @@ export 'package:stac/src/parsers/widgets/stac_text_field/stac_text_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_form_field/stac_text_form_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 export 'package:stac/src/parsers/widgets/stac_vertical_divider/stac_vertical_divider.dart';
-export 'package:stac/src/parsers/widgets/stac_wrap/stac_wrap.dart';
 export 'package:stac/src/parsers/widgets/stac_visibility/stac_visibility.dart';
-export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter.dart';
+export 'package:stac/src/parsers/widgets/stac_wrap/stac_wrap.dart';
