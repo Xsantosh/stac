@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 Widget homeContainer() {
   return Container(
-    width: 200,
-    height: 150,
-    color: Colors.blue,
-    child: const Text(
-      'Hello STAC Export!',
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    width: 2000,
+    height: 1500,
+    child: Text(
+      'data',
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }

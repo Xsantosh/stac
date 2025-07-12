@@ -1,0 +1,13 @@
+{
+  "type": "container",
+  "width": 2000.0,
+  "height": 1500.0,
+  "child": {
+    "type": "text",
+    "data": "data",
+    "style": {
+      "fontSize": 18.0,
+      "fontWeight": 700
+    }
+  }
+}

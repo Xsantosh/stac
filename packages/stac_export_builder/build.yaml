@@ -1,0 +1,33 @@
+targets:
+  $default:
+    builders:
+      stac_export_builder|stac_widget_export:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**/*.dart
+            - example/**/*.dart
+          exclude:
+            - lib/**/*.g.dart
+      stac_export_builder|stac_json_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**/*.dart
+            - example/**/*.dart
+
+builders:
+  stac_widget_export:
+    import: "package:stac_export_builder/builder.dart"
+    builder_factories: ["stacWidgetExportBuilder"]
+    build_extensions: {".dart": [".stac_widget_export.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+  
+  stac_json_builder:
+    import: "package:stac_export_builder/builder.dart"
+    builder_factories: ["stacJsonBuilder"]
+    build_extensions: {".dart": [".stac.json", ".stac/*.json"]}
+    auto_apply: dependents
+    build_to: source

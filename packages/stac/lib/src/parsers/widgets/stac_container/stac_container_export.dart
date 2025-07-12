@@ -48,12 +48,12 @@ class StacContainerExport extends StacExport<Container> {
     if (widget.constraints != null) {
       if (widget.constraints!.maxWidth.isFinite &&
           widget.constraints!.maxWidth == widget.constraints!.minWidth) {
-        json['width'] = {'value': widget.constraints!.maxWidth};
+        json['width'] = widget.constraints!.maxWidth;
       }
 
       if (widget.constraints!.maxHeight.isFinite &&
           widget.constraints!.maxHeight == widget.constraints!.minHeight) {
-        json['height'] = {'value': widget.constraints!.maxHeight};
+        json['height'] = widget.constraints!.maxHeight;
       }
 
       // Handle general constraints if they don't represent fixed width/height
