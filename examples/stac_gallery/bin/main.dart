@@ -5,8 +5,10 @@ import 'package:path/path.dart' as path;
 // Import STAC exports
 import 'package:stac/src/framework/stac_exporter.dart';
 import 'package:stac/src/parsers/widgets/stac_container/stac_container_export.dart';
+import 'package:stac/src/parsers/widgets/stac_elevated_button/stac_elevated_button_exporter.dart';
 import 'package:stac/src/parsers/widgets/stac_text/stac_text_export.dart';
 
+import '../stac/button.dart' as button;
 // Import the known widget definitions from stac folder
 import '../stac/home.dart' as home;
 
@@ -39,7 +41,7 @@ void main() async {
   final knownWidgetsByFile = {
     'home.dart': {
       'homeContainer': home.homeContainer,
-      // Add other widget functions from home.dart here
+      'getButton': button.getButton,
     },
     // Add other files here as needed
   };
@@ -105,10 +107,15 @@ Future<void> _setupExporter() async {
   // Register exporters for the widget types we want to support
   final containerExporter = StacContainerExport();
   final textExporter = StacTextExport();
+  final elevatedButtonExporter = StacElevatedButtonExport();
 
   // Clear existing exporters and register new ones
   StacExporter.instance.clear();
-  await StacExporter.instance.registerAll([containerExporter, textExporter]);
+  await StacExporter.instance.registerAll([
+    containerExporter,
+    textExporter,
+    elevatedButtonExporter,
+  ]);
 
   print('STAC exporters registered.');
 }
