@@ -10,12 +10,9 @@ part of 'example_widgets.dart';
 // Generated code - do not modify
 
 const Map<String, Map<String, dynamic>> stacExports = {
-  'createRedContainer': {
+  'homeContainer': {
     "type": "text",
-    "data": "Hello STAC Export!",
-    "style": {
-      "fontSize": 18,
-      "fontWeight": {"type": "fontWeight", "value": "bold"}
-    }
+    "data": "Button",
+    "style": {"fontSize": 18}
   },
 };

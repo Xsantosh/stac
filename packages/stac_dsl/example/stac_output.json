@@ -1,0 +1,9 @@
+{
+  "type": "text",
+  "data": "Hello STAC",
+  "style": {
+    "fontSize": 18.0,
+    "fontWeight": 500,
+    "color": "#3B82F6"
+  }
+}

@@ -1,11 +1,7 @@
 {
   "type": "text",
-  "data": "Hello STAC Export!",
+  "data": "Button",
   "style": {
-    "fontSize": 18,
-    "fontWeight": {
-      "type": "fontWeight",
-      "value": "bold"
-    }
+    "fontSize": 18
   }
 }

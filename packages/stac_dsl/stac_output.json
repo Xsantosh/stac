@@ -1,0 +1,11 @@
+{
+  "type": "elevatedButton",
+  "child": {
+    "type": "text",
+    "data": "Hello STAC",
+    "style": {
+      "fontSize": 18.0
+    }
+  },
+  "hasOnPressed": true
+}
