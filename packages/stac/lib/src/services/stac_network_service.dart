@@ -34,8 +34,10 @@ class StacNetworkService {
   static Future<Response?> getRequest(StacNetworkRequest request) async {
     return _dio.get(
       request.url,
-      data: request.body,
       queryParameters: request.queryParameters,
+      options: Options(
+        validateStatus: (status) => status != null && status < 500,
+      ),
     );
   }
 
@@ -49,6 +51,9 @@ class StacNetworkService {
       request.url,
       data: body,
       queryParameters: request.queryParameters,
+      options: Options(
+        validateStatus: (status) => status != null && status < 500,
+      ),
     );
   }
 
@@ -57,6 +62,9 @@ class StacNetworkService {
       request.url,
       data: request.body,
       queryParameters: request.queryParameters,
+      options: Options(
+        validateStatus: (status) => status != null && status < 500,
+      ),
     );
   }
 
@@ -65,6 +73,9 @@ class StacNetworkService {
       request.url,
       data: request.body,
       queryParameters: request.queryParameters,
+      options: Options(
+        validateStatus: (status) => status != null && status < 500,
+      ),
     );
   }
 

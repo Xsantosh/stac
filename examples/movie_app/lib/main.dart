@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/default_stac_options.dart';
 import 'package:movie_app/widgets/movie_carousel/movie_carousel_parser.dart';
 import 'package:stac/stac.dart';
 
@@ -17,7 +18,11 @@ void main() async {
     ),
   );
 
-  await Stac.initialize(dio: dio, parsers: [MovieCarouselParser()]);
+  await Stac.initialize(
+    dio: dio,
+    parsers: [MovieCarouselParser()],
+    options: DefaultStacOptions.options,
+  );
 
   runApp(const MyApp());
 }
@@ -27,13 +32,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StacApp(
-      title: 'Flutter Demo',
-      theme: StacTheme.fromJson(darkThemeJson),
-      homeBuilder: (_) {
-        return Stac.fromAssets('assets/jsons/screens/onboarding_screen.json');
-      },
-    );
+    return MaterialApp(title: 'Flutter Demo', home: Stac.view('home_screen'));
   }
 }
 

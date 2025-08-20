@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stac/src/framework/stac_registry.dart';
+import 'package:stac/src/framework/stac_view.dart';
 import 'package:stac/src/parsers/actions/stac_form_validate/stac_form_validate_parser.dart';
 import 'package:stac/src/parsers/actions/stac_get_form_value/stac_get_form_value_parser.dart';
 import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request_parser.dart';
@@ -37,6 +38,8 @@ typedef LoadingWidgetBuilder = Widget Function(BuildContext context);
 ///
 /// The `Stac` class also provides utility methods to convert a widget to a `PreferredSizeWidget`.
 class Stac {
+  static StacOptions? _options;
+
   static final _parsers = <StacParser>[
     const StacContainerParser(),
     const StacTextParser(),
@@ -135,11 +138,13 @@ class Stac {
   ];
 
   static Future<void> initialize({
+    StacOptions? options,
     List<StacParser> parsers = const [],
     List<StacActionParser> actionParsers = const [],
     Dio? dio,
     bool override = false,
   }) async {
+    _options = options;
     _parsers.addAll(parsers);
     _actionParsers.addAll(actionParsers);
     StacRegistry.instance.registerAll(_parsers, override);
@@ -296,6 +301,25 @@ class Stac {
         }
         return const SizedBox();
       },
+    );
+  }
+
+  /// Fetch and render a STAC screen from cloud by its [screenName].
+  ///
+  /// Requires that [Stac.initialize] was called with [StacOptions] that either
+  /// set [StacOptions.fetchUrl] or rely on the default cloud endpoint.
+  static Widget view(
+    String screenName, {
+    LoadingWidgetBuilder? loadingWidget,
+    ErrorWidgetBuilder? errorWidget,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? query,
+  }) {
+    return StacView(
+      screenName: screenName,
+      headers: headers,
+      query: query,
+      options: _options,
     );
   }
 }
